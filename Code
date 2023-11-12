@@ -1,0 +1,143 @@
+{{!
+This file is part of Moodle - http://moodle.org/
+
+Moodle is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+Moodle is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Moodle. If not, see
+<http: //www.gnu.org/licenses />.
+}}
+{{!
+@template core/email_html
+
+Template for all html emails. Note that it may wrap content formatted
+elsewhere in another a module template.
+
+Context variables required for this template:
+* sitefullname
+* siteshortname
+* sitewwwroot
+* subject
+* to
+* toname
+* touserid
+* tousername
+* from
+* fromname
+* replyto
+* replytoname
+* body
+* prefix
+
+Example context (json):
+{
+"prefix": "[Prefix Text]",
+"body": "Email body"
+}
+}}
+
+<table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable"
+    style="font-family: Tahoma; background-color: #d1dcc2; color:black;">
+    <tr>
+        <td align="center" valign="top">
+            <table border="0" cellpadding="0" cellspacing="0" width="640" id="emailContainer"
+                style="border: 10px solid #d1dcc2; background-color: #d1dcc2;">
+                <tr>
+                    <td align="center" valign="top">
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%" id="emailHeader"
+                            style="background-color: #d1dcc2;font-weight:bold;">
+                            <tr>
+                                <td align="center" valign="top">
+                                    <img style="color: #3C6801;" width="150px"
+                                        src="https://ha.africaacademy.com/pluginfile.php/1/theme_lambda/logo/1699516881/new%20africa%20platform%20logos-01.png"
+                                        alt="{{siteshortname}}">
+                                </td>
+                            </tr>
+                            <!--<tr>
+                                    <td align="left" valign="top" style="color: #3C6801;">
+                                        <h1>{{{subject}}}</h1>
+                                    </td>
+                                </tr>
+                            -->
+
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" valign="top">
+                        <table border="0" cellpadding="20" cellspacing="0" width="100%" id="emailBody"
+                            style="background-color: white; border-top: 10px solid #3c6801; ">
+                            <tr>
+                                {{{body}}}
+                            </tr>
+                            <tr>
+                                <td style="padding: 0;">
+                                    <hr>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center" style="padding: 0;">
+                                    <table border="0">
+                                        <tr>
+                                            <td>
+                                                <a href="https://t.me/africaacademyhau">
+                                                    <img width="64"
+                                                        src='https://africaacademy.com/ha/wp-content/uploads/2023/11/Group-607.png'
+                                                        alt="telegram">
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <a href="http://facebook.com/africaacademyhau">
+                                                    <img width="64"
+                                                        src="https://africaacademy.com/ha/wp-content/uploads/2023/11/Group-606.png"
+                                                        alt="facebook">
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <a href="https://www.youtube.com/@africaacademyhau">
+                                                    <img width="64"
+                                                        src="https://africaacademy.com/ha/wp-content/uploads/2023/11/Group-609.png"
+                                                        alt="youtube">
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <a href="http://www.tiktok.com/@africaacademyhau">
+                                                    <img width="64"
+                                                        src="https://africaacademy.com/ha/wp-content/uploads/2023/11/Group-608.png"
+                                                        alt="tiktok">
+                                                </a>
+                                            </td>
+
+
+
+
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center" valign="top" style="padding-top: 0;">
+                                    <table border="0" cellpadding="10" cellspacing="0" width="100%" id="emailFooter"
+                                        style="background-color: white; color: black; font-size: .8rem;font-weight: 400;">
+                                        <td align="center" valign="top">
+                                            © 2023 {{siteshortname}}, All rights reserved
+
+                                        </td>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
