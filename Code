@@ -72,7 +72,12 @@ Example context (json):
                     </td>
                 </tr>
                 <tr>
-                    <td align="center" valign="top">
+                   {{#lang}}
+                        <td align="center" valign="top" style="direction: rtl; text-align: justify;">
+                            {{/lang}}
+                            {{^lang}}
+                        <td align="center" valign="top" style="direction: ltr; text-align: justify;">
+                            {{/lang}}
                         <table border="0" cellpadding="20" cellspacing="0" width="100%" id="emailBody"
                             style="background-color: white; border-top: 10px solid #3c6801; ">
                             <tr>
@@ -128,9 +133,14 @@ Example context (json):
                                     <table border="0" cellpadding="10" cellspacing="0" width="100%" id="emailFooter"
                                         style="background-color: white; color: black; font-size: .8rem;font-weight: 400;">
                                         <td align="center" valign="top">
-                                            © 2023 {{siteshortname}}, All rights reserved
-
-                                        </td>
+                                                {{#lang}}
+                                                جميع الحقوق محفوظة، © 2023 {{siteshortname}}
+                                                {{/lang}}
+                                                {{^lang}}
+                                                © 2023 {{siteshortname}}, All rights reserved 
+                                                {{/lang}}
+                                               
+                                            </td>
                                     </table>
                                 </td>
                             </tr>
